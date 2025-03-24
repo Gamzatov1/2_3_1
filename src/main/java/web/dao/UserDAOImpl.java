@@ -14,17 +14,8 @@ import java.util.List;
 @Repository
 public class UserDAOImpl implements UserDAO {
 
-    private List<User> users;
-
     @PersistenceContext
     private EntityManager em;
-
-    @Autowired
-    public UserDAOImpl(List<User> users) {
-        users = new ArrayList<User>();
-        users.add(new User("FirstName", "FirstSurname", (byte) 11));
-        users.add(new User("FirstName", "FirstSurname", (byte) 11));
-    }
 
     @Override
     public List<User> allUsers() {

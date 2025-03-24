@@ -11,11 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@Transactional(readOnly=true)
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDAO userDAO;
+    private final UserDAO userDAO;
+
+    public UserServiceImpl(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     @Override
     public List<User> allUsers() {
