@@ -17,18 +17,15 @@ public class User {
     private Long id;
 
     @Column(name = "name")
-    private final String name;
+    private String name;
 
     @Column(name = "surname")
-    private final String surname;
+    private String surname;
 
     @Column(name = "age")
-    private final Byte age;
+    private Byte age;
 
     public User() {
-        this.name = null;
-        this.surname = null;
-        this.age = null;
     }
 
     public User(String name, String surname, Byte age) {
@@ -49,12 +46,28 @@ public class User {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getSurname() {
         return surname;
     }
 
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     public Byte getAge() {
         return age;
+    }
+
+    public void setAge(Byte age) {
+        if (age != null && age >= 0) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     @Override
