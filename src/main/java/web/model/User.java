@@ -38,6 +38,18 @@ public class User {
         return id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setAge(Byte age) {
+        this.age = age;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -46,28 +58,12 @@ public class User {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
     public Byte getAge() {
         return age;
-    }
-
-    public void setAge(Byte age) {
-        if (age != null && age >= 0) {
-            this.age = age;
-        } else {
-            throw new IllegalArgumentException();
-        }
     }
 
     @Override
